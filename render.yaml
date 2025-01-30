@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: scene-stealers
+    runtime: static
+    buildCommand: npm run render-build
+    staticPublishPath: dist
+    envVars:
+      - key: TMDB_API_KEY
+        sync: false
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
+    routes:
+      - type: rewrite
+        source: /.*
+        destination: /index.html
+    autoDeploy: true
+    buildFilter:
+      paths:
+        - src/**
+        - index.html
+        - journal.html
+        - package.json
+        - tailwind.config.js
