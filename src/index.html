@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SceneStealers</title>
+    <!-- Link to the favicon -->
+    <link rel="icon" type="image/png" href="./images/favicon.svg" />
+    <!-- Link to our CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/2191fb3337.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-[#0e0023]">
+    <!-- header -->
+    <header
+      class="w-full min-w-full flex justify-between items-center py-6 px-8"
+      id="header"
+    >
+      <!-- logo -->
+      <div class="w-64 md:w-80 p-8">
+        <img
+          src="./images/logo.svg"
+          alt="Logo"
+          class="hover:scale-105 transition-all w-full h-auto"
+        />
+      </div>
+
+      <!-- navigation -->
+      <nav
+        class="hidden laptop:flex text-3xl items-center bg-[#0e0023] font-semibold"
+        id="navbar"
+      >
+        <ul class="flex list-none" id="listItemsLink">
+          <li
+            class="p-3 cursor-pointer hover:text-4xl hover:underline text-white"
+          >
+            <a class="no-underline" href="index.html" id="linkHome">Home</a>
+          </li>
+          <li
+            class="p-3 cursor-pointer hover:text-4xl hover:underline text-white"
+          >
+            <a class="no-underline" href="journal.html" id="linkJournal"
+              >Journal</a
+            >
+          </li>
+          <li
+            class="p-3 cursor-pointer hover:text-4xl hover:underline text-white"
+          >
+            <a class="no-underline" href="#events" id="linkEvents">Events</a>
+          </li>
+          <li
+            class="p-3 cursor-pointer hover:text-4xl hover:underline text-white"
+          >
+            <a class="no-underline" href="#register" id="linkRegister"
+              >Register</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- search -->
+      <div class="relative hidden tablet:block">
+        <form id="searchForm" class="flex items-center">
+          <input
+            type="text"
+            placeholder="Search movies..."
+            class="text-xl pl-10 pr-4 py-2 rounded-xl text-primaryColor w-64"
+            id="searchInput"
+          />
+          <i
+            class="fa-solid fa-magnifying-glass text-secondaryColor absolute left-3 top-1/2 -translate-y-1/2"
+          ></i>
+        </form>
+      </div>
+
+      <!-- hamburger menu -->
+      <button class="block laptop:hidden" id="hamburger-menu">
+        <i class="fa-solid fa-bars text-4xl text-primaryColor"></i>
+      </button>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-[#0e0023] z-50 hidden">
+      <div class="p-8">
+        <button id="closeMenu" class="float-right">
+          <i class="fa-solid fa-x text-4xl text-primaryColor"></i>
+        </button>
+        <nav class="flex flex-col items-center gap-8 mt-20">
+          <a href="index.html" class="text-white text-3xl">Home</a>
+          <a href="journal.html" class="text-white text-3xl">Journal</a>
+          <a href="#events" class="text-white text-3xl">Events</a>
+          <a href="#register" class="text-white text-3xl">Register</a>
+
+          <!-- Mobile search -->
+          <form id="mobileSearchForm" class="w-full max-w-md mt-8">
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search movies..."
+                class="w-full text-xl pl-10 pr-4 py-2 rounded-xl text-primaryColor"
+              />
+              <i
+                class="fa-solid fa-magnifying-glass text-secondaryColor absolute left-3 top-1/2 -translate-y-1/2"
+              ></i>
+            </div>
+          </form>
+        </nav>
+      </div>
+    </div>
+    <!-- end of header -->
+
+    <section
+      id="hero"
+      class="bg-gradient-to-b from-[#a5b4fc] to-[#0e0023] relative min-h-[700px]"
+    >
+      <div id="hero-content" class="relative w-full h-full"></div>
+    </section>
+
+    <main>
+      <!-- container to display the movie-cards -->
+      <section
+        id="movie-container"
+        class="flex flex-col justify-center items-center gap-8 px-16 py-24"
+      >
+        <h1 class="text-5xl text-white font-['Bungee'] py-8">Popular movies</h1>
+        <div
+          id="movie-cards"
+          class="grid grid-cols-2 gap-4 lg:grid-cols-4"
+        ></div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-gradient-to-tr from-[#a5b4fc] to-[#706ed7] min-h-64 flex flex-col justify-between pt-20 border-t"
+    >
+      <div class="flex items-start justify-between px-16 lg:px-28">
+        <img src="./images/logo-footer.png" alt="Logo" class="max-w-48" />
+        <ul class="p-12 flex flex-col gap-2">
+          <li class="font-bold text-lg font-['Bungee'] text-[#4845d2]">
+            Navigation
+          </li>
+          <hr />
+          <li>
+            <a href="journal.html" class="text-white font-bold text-lg"
+              >Journal</a
+            >
+          </li>
+          <li><a href="#" class="text-white font-bold text-lg">Events</a></li>
+          <li><a href="#" class="text-white font-bold text-lg">Register</a></li>
+          <li><a href="#" class="text-white font-bold text-lg">Imprint</a></li>
+        </ul>
+        <ul class="p-12 flex flex-col gap-2">
+          <li class="font-bold text-lg font-['Bungee'] text-[#4845d2]">
+            Social Media
+          </li>
+          <hr />
+          <li>
+            <div class="grid grid-cols-2 gap-2 justify-items-center">
+              <a href="#"
+                ><img
+                  src="./images/instagram-brands-solid.svg"
+                  alt="Instagram"
+                  class="w-8"
+              /></a>
+              <a href="#"
+                ><img
+                  src="./images/linkedin-brands-solid.svg"
+                  alt="LinkedIn"
+                  class="w-8"
+              /></a>
+              <a href="#"
+                ><img
+                  src="./images/square-x-twitter-brands-solid.svg"
+                  alt="X"
+                  class="w-8"
+              /></a>
+              <a href="#"
+                ><img
+                  src="./images/square-youtube-brands-solid.svg"
+                  alt="YouTube"
+                  class="w-8"
+              /></a>
+            </div>
+          </li>
+        </ul>
+        <ul class="p-12 flex flex-col gap-2">
+          <li class="font-bold text-lg font-['Bungee'] text-[#4845d2]">
+            Partners
+          </li>
+          <hr />
+          <li>
+            <div class="flex justify-items-center items-center p-2 gap-4">
+              <a href="#"
+                ><img src="./images/trust1.svg" alt="placeholder"
+              /></a>
+              <a href="#"
+                ><img src="./images/trust2.svg" alt="placeholder"
+              /></a>
+              <a href="#"
+                ><img src="./images/trust3.svg" alt="placeholder"
+              /></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <p class="px-16 py-4 border-t text-center text-[#4845d2]">
+        © 2025 | SceneStealers
+      </p>
+    </footer>
+
+    <!-- script -->
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

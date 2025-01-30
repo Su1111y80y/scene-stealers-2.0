@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+.parcel-cache/
+
+# Environment variables
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
